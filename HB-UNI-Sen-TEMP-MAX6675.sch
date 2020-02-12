@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:HB-UNI-Sen-TEMP-MAX6675-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -14,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_Microchip_ATmega:ATmega328P-AU U3
+L HB-UNI-Sen-TEMP-MAX6675-rescue:ATmega328P-AU-MCU_Microchip_ATmega U3
 U 1 1 5E2DF317
 P 7100 3400
 F 0 "U3" H 6650 1950 50  0000 C CNN
@@ -25,7 +26,7 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20w
 	1    0    0    -1  
 $EndComp
 $Comp
-L homebrew:CC1101 IC1
+L HB-UNI-Sen-TEMP-MAX6675-rescue:CC1101-homebrew IC1
 U 1 1 5E2F7883
 P 10350 2000
 F 0 "IC1" H 10325 2597 60  0000 C CNN
@@ -36,7 +37,7 @@ F 3 "" H 10350 2000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L homebrew:MAX1724 U4
+L HB-UNI-Sen-TEMP-MAX6675-rescue:MAX1724-homebrew U4
 U 1 1 5E2F8247
 P 3450 1800
 F 0 "U4" H 3450 2237 60  0000 C CNN
@@ -538,7 +539,7 @@ MAX6675_SCK
 Text Label 2650 5050 2    50   ~ 0
 MAX6675_SCK
 $Comp
-L homebrew:MAX6675 U2
+L HB-UNI-Sen-TEMP-MAX6675-rescue:MAX6675-homebrew U2
 U 1 1 5E2E1C21
 P 4450 4650
 F 0 "U2" H 4450 4725 50  0000 C CNN
@@ -549,7 +550,7 @@ F 3 "" H 4450 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L homebrew:MAX6675 U1
+L HB-UNI-Sen-TEMP-MAX6675-rescue:MAX6675-homebrew U1
 U 1 1 5E2E09ED
 P 1700 4650
 F 0 "U1" H 1700 4725 50  0000 C CNN
@@ -1078,7 +1079,7 @@ Wire Wire Line
 Wire Wire Line
 	1500 1750 1250 1750
 $Comp
-L Connector:AVR-ISP-6 J5
+L HB-UNI-Sen-TEMP-MAX6675-rescue:AVR-ISP-6-Connector J5
 U 1 1 5E49F454
 P 1300 3450
 F 0 "J5" H 971 3546 50  0000 R CNN
@@ -1186,7 +1187,6 @@ Wire Wire Line
 Connection ~ 11050 2150
 Wire Wire Line
 	11050 2150 11050 2350
-NoConn ~ 7550 6150
 $Comp
 L Device:LED D1
 U 1 1 5E31C284
@@ -1203,7 +1203,7 @@ L Device:Jumper_NO_Small JP5
 U 1 1 5E57C19D
 P 1200 2750
 F 0 "JP5" V 1154 2798 50  0000 L CNN
-F 1 "Jumper_NO_Small" V 1245 2798 50  0000 L CNN
+F 1 "VCC-Jumper" V 1245 2798 50  0000 L CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 1200 2750 50  0001 C CNN
 F 3 "~" H 1200 2750 50  0001 C CNN
 	1    1200 2750
@@ -1211,4 +1211,30 @@ F 3 "~" H 1200 2750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1200 2650 1200 2500
+$Comp
+L power:VCC #PWR0118
+U 1 1 5E4B8425
+P 7550 5425
+F 0 "#PWR0118" H 7550 5275 50  0001 C CNN
+F 1 "VCC" H 7650 5525 50  0000 C CNN
+F 2 "" H 7550 5425 50  0001 C CNN
+F 3 "" H 7550 5425 50  0001 C CNN
+	1    7550 5425
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Jumper_NO_Small JP6
+U 1 1 5E4B842C
+P 7550 5675
+F 0 "JP6" V 7504 5723 50  0000 L CNN
+F 1 "VCC-Jumper" V 7595 5723 50  0000 L CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 7550 5675 50  0001 C CNN
+F 3 "~" H 7550 5675 50  0001 C CNN
+	1    7550 5675
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7550 5575 7550 5425
+Wire Wire Line
+	7550 5775 7550 6150
 $EndSCHEMATC

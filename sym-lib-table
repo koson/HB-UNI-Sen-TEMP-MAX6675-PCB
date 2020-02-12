@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name HB-UNI-Sen-TEMP-MAX6675-rescue)(type Legacy)(uri ${KIPRJMOD}/HB-UNI-Sen-TEMP-MAX6675-rescue.lib)(options "")(descr ""))
+)
