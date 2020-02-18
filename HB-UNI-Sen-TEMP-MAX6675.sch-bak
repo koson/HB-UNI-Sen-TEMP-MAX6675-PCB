@@ -1187,7 +1187,6 @@ Wire Wire Line
 Connection ~ 11050 2150
 Wire Wire Line
 	11050 2150 11050 2350
-NoConn ~ 7550 6150
 $Comp
 L Device:LED D1
 U 1 1 5E31C284
@@ -1204,7 +1203,7 @@ L Device:Jumper_NO_Small JP5
 U 1 1 5E57C19D
 P 1200 2750
 F 0 "JP5" V 1154 2798 50  0000 L CNN
-F 1 "Jumper_NO_Small" V 1245 2798 50  0000 L CNN
+F 1 "VCC-Jumper" V 1245 2798 50  0000 L CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 1200 2750 50  0001 C CNN
 F 3 "~" H 1200 2750 50  0001 C CNN
 	1    1200 2750
@@ -1212,4 +1211,30 @@ F 3 "~" H 1200 2750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1200 2650 1200 2500
+$Comp
+L power:VCC #PWR0118
+U 1 1 5E4B8425
+P 7550 5425
+F 0 "#PWR0118" H 7550 5275 50  0001 C CNN
+F 1 "VCC" H 7650 5525 50  0000 C CNN
+F 2 "" H 7550 5425 50  0001 C CNN
+F 3 "" H 7550 5425 50  0001 C CNN
+	1    7550 5425
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Jumper_NO_Small JP6
+U 1 1 5E4B842C
+P 7550 5675
+F 0 "JP6" V 7504 5723 50  0000 L CNN
+F 1 "VCC-Jumper" V 7595 5723 50  0000 L CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 7550 5675 50  0001 C CNN
+F 3 "~" H 7550 5675 50  0001 C CNN
+	1    7550 5675
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7550 5575 7550 5425
+Wire Wire Line
+	7550 5775 7550 6150
 $EndSCHEMATC
